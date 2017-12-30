@@ -4,8 +4,8 @@
   </div>
   <p class="lead">Do you have questions? Join us on <a href="https://discord.gg/Rdrz7Mm">Discord</a>!
 
-    <br/><h2>Low Difficulty:</h2><code>stratum+tcp://%subdomain%:%lowdiff%</code>
-    <br/><h2>High Difficulty (Nicehash):</h2><code>stratum+tcp://%subdomain%:%highdiff%</code>
+    <br/><h2>Low Difficulty:</h2><code>stratum+tcp://%subdomain%.%domain%:%lowdiff%</code>
+    <br/><h2>High Difficulty (Nicehash):</h2><code>stratum+tcp://%subdomain%.%domain%:%highdiff%</code>
   </p>
   <dl class="dl-horizontal">
     <dt>Get A Wallet:</dt>
@@ -13,7 +13,7 @@
   </dl>
   <p>
     <strong>Full example:</strong><br>
-    <code>EthDcrMiner64.exe -epool stratum+tcp://%subdomain%:%lowdiff% -ewal YOURWALLETADDRESS -epsw x -ethi 8 -allpools 1 -esm 0 -allcoins 1 -eworker WORKER</code><br/>
+    <code>EthDcrMiner64.exe -epool stratum+tcp://%subdomain%.%domain%:%lowdiff% -ewal YOURWALLETADDRESS -epsw x -ethi 8 -allpools 1 -esm 0 -allcoins 1 -eworker WORKER</code><br/>
 <br>    
 <span class="label label-info">Hint:</span> You should make a .bat file to start your miner. You can do this by creating a text file in your miner folder and copy/pasting the
 appropriate command line into that text file. Then, change the file type from .txt to .bat!
@@ -30,7 +30,7 @@ setx GPU_USE_SYNC_OBJECTS 1<br>
 setx GPU_MAX_ALLOC_PERCENT 100<br>
 setx GPU_SINGLE_ALLOC_PERCENT 100<br>
 </p>
-<code>EthDcrMiner64.exe -epool stratum+tcp://%subdomain%:%lowdiff% -ewal YOURWALLETADDRESS -epsw x -ethi 8 -allpools 1 -esm 0 -allcoins 1 -eworker WORKER</code>
+<code>EthDcrMiner64.exe -epool stratum+tcp://%subdomain%.%domain%:%lowdiff% -ewal YOURWALLETADDRESS -epsw x -ethi 8 -allpools 1 -esm 0 -allcoins 1 -eworker WORKER</code>
 <br><br>
   <p class="lead">Mining with Eminer</p>
   <p><a href="https://github.com/ethash/eminer-release">Download Eminer</a>
@@ -43,7 +43,7 @@ setx GPU_USE_SYNC_OBJECTS 1<br>
 setx GPU_MAX_ALLOC_PERCENT 100<br>
 setx GPU_SINGLE_ALLOC_PERCENT 100<br>
 </p>
-<code>eminer.exe -S %subdomain%:%lowdiff% -U YOURWALLETADDRESS -P x --cloud-key CLOUDKEY -intensity 48 -N WORKER</code>
+<code>eminer.exe -S %subdomain%.%domain%:%lowdiff% -U YOURWALLETADDRESS -P x --cloud-key CLOUDKEY -intensity 48 -N WORKER</code>
 <br><br>
   <p class="lead">Mining with Ethminer</p>
   <p><a href="https://github.com/ethereum-mining/ethminer">Download Ethminer</a>
@@ -56,7 +56,7 @@ setx GPU_USE_SYNC_OBJECTS 1<br>
 setx GPU_MAX_ALLOC_PERCENT 100<br>
 setx GPU_SINGLE_ALLOC_PERCENT 100<br>
 </p>
-<code>ethminer.exe --farm-recheck 200 -G -S %subdomain%:%lowdiff% -SP 1 -O YOURWALLETADDRESS.WORKER --opencl-platform 1</code>
+<code>ethminer.exe --farm-recheck 200 -G -S %subdomain%.%domain%:%lowdiff% -SP 1 -O YOURWALLETADDRESS.WORKER --opencl-platform 1</code>
 <br><br>
   <h4>Terms of Service</h4>
   <p>By using the pool you accept all possible risks related to experimental software usage.<br/>
