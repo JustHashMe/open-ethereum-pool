@@ -1,43 +1,66 @@
 <div class="container">
   <div class="page-header">
-    <h1>How To Mine</h1>
+    <h1>Welcome to JustHash's PIRL Pool!</h1>
   </div>
-  <p class="lead">In order to mine on this pool you need to have an
-    <a href="https://github.com/ethereum/webthree-umbrella/releases" rel="nofollow" target="_blank">ethminer</a> installation
-    pointed to<br/><code>{{config.HttpHost}}:{{config.HttpPort}}/YOUR_ETH_ADDRESS/RIG_ID</code>
+  <p class="lead">Do you have questions? Join us on <a href="https://discord.gg/Rdrz7Mm">Discord</a>!
+
+    <br/><h2>Low Difficulty:</h2><code>stratum+tcp://%subdomain%:%lowdiff%</code>
+    <br/><h2>High Difficulty (Nicehash):</h2><code>stratum+tcp://%subdomain%:%highdiff%</code>
   </p>
   <dl class="dl-horizontal">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
-      <strong>Example:</strong> <code>0xb85150eb365e7df0941f0cf08235f987ba91506a</code>.
-    </dd>
-    <dt>RIG_ID</dt>
-    <dd>
-      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
-      This param must be short alphanumeric string with optional dashes and underscores.<br/>
-      <strong>Example:</strong> <code>rig-1</code>
-    </dd>
+    <dt>Get A Wallet:</dt>
+    <dd>Grab a wallet from <a href="https://pirl.io/">Pirl.io</a> or get one from their <a href="https://wallet.pirl.io/">Web Wallet!</a></dd>
   </dl>
   <p>
-    <strong>Full example:</strong>
-    <code>ethminer -F {{config.HttpHost}}:{{config.HttpPort}}/0xb85150eb365e7df0941f0cf08235f987ba91506a/myfarm -G --farm-recheck 200</code>.<br/>
-    <span class="label label-info">Hint:</span> If you are compiling ethminer from latest source, please also use
-      extra <code>--disable-submit-hashrate</code> option.
+    <strong>Full example:</strong><br>
+    <code>EthDcrMiner64.exe -epool stratum+tcp://%subdomain%:%lowdiff% -ewal YOURWALLETADDRESS -epsw x -ethi 8 -allpools 1 -esm 0 -allcoins 1 -eworker WORKER</code><br/>
+<br>    
+<span class="label label-info">Hint:</span> You should make a .bat file to start your miner. You can do this by creating a text file in your miner folder and copy/pasting the
+appropriate command line into that text file. Then, change the file type from .txt to .bat!
   </p>
-
-  <h4>Stratum Mining with Stratum Proxy for Ethereum</h4>
-  <p class="lead">Grab proxy from <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">eth-proxy GitHub repo</a>.</p>
-  <p class="lead">Edit <code>eth-proxy.conf</code> and specify our pool's <code>HOST: {{config.StratumHost}}</code>, <code>PORT: {{config.StratumPort}}</code> and your <code>WALLET</code>.</p>
-
-  <h4>Mining with Ether-Proxy</h4>
-  <p class="lead">Use stable release of <a href="https://github.com/sammy007/ether-proxy/releases" target="_blank">Ethereum Solo/Pool Mining Proxy</a>.</p>
-
-  <h4>Advice</h4>
-  <p>CPU mining is not recommended.</p>
+<br>
+  <p class="lead">Mining with Claymore (Best)</p>
+  <p><a href="https://github.com/nanopool/Claymore-Dual-Miner/releases">Download Claymore</a>
+<br><br>
+Usage:
+<br><br>
+setx GPU_FORCE_64BIT_PTR 0<br>
+setx GPU_MAX_HEAP_SIZE 100<br>
+setx GPU_USE_SYNC_OBJECTS 1<br>
+setx GPU_MAX_ALLOC_PERCENT 100<br>
+setx GPU_SINGLE_ALLOC_PERCENT 100<br>
+</p>
+<code>EthDcrMiner64.exe -epool stratum+tcp://%subdomain%:%lowdiff% -ewal YOURWALLETADDRESS -epsw x -ethi 8 -allpools 1 -esm 0 -allcoins 1 -eworker WORKER</code>
+<br><br>
+  <p class="lead">Mining with Eminer</p>
+  <p><a href="https://github.com/ethash/eminer-release">Download Eminer</a>
+<br><br>
+Usage:
+<br><br>
+setx GPU_FORCE_64BIT_PTR 0<br>
+setx GPU_MAX_HEAP_SIZE 100<br>
+setx GPU_USE_SYNC_OBJECTS 1<br>
+setx GPU_MAX_ALLOC_PERCENT 100<br>
+setx GPU_SINGLE_ALLOC_PERCENT 100<br>
+</p>
+<code>eminer.exe -S %subdomain%:%lowdiff% -U YOURWALLETADDRESS -P x --cloud-key CLOUDKEY -intensity 48 -N WORKER</code>
+<br><br>
+  <p class="lead">Mining with Ethminer</p>
+  <p><a href="https://github.com/ethereum-mining/ethminer">Download Ethminer</a>
+<br><br>
+Usage:
+<br><br>
+setx GPU_FORCE_64BIT_PTR 0<br>
+setx GPU_MAX_HEAP_SIZE 100<br>
+setx GPU_USE_SYNC_OBJECTS 1<br>
+setx GPU_MAX_ALLOC_PERCENT 100<br>
+setx GPU_SINGLE_ALLOC_PERCENT 100<br>
+</p>
+<code>ethminer.exe --farm-recheck 200 -G -S %subdomain%:%lowdiff% -SP 1 -O YOURWALLETADDRESS.WORKER --opencl-platform 1</code>
+<br><br>
   <h4>Terms of Service</h4>
   <p>By using the pool you accept all possible risks related to experimental software usage.<br/>
-     Pool owner can't compensate any irreversible losses, but will do his best to prevent worst case.
+     Pool owner can't compensate any irreversible losses, but will do their best to prevent worst case.
   </p>
 </div>
+
